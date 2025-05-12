@@ -1,5 +1,10 @@
 // main.js
-import { PlaywrightCrawler } from 'crawlee';
+import { PlaywrightCrawler, Dataset } from 'crawlee';
+
+// Apri il dataset con le URL da visitare
+const dataset = await Dataset.open('R8gJq9vyqg1n5GAWK'); // ID del dataset importato da CSV
+const records = await dataset.getData();
+const startUrls = records.items.map(item => item["LinkedIn Ads Library URL"]);
 
 const crawler = new PlaywrightCrawler({
     async requestHandler({ request, page, log, pushData }) {
@@ -35,10 +40,5 @@ const crawler = new PlaywrightCrawler({
     maxRequestsPerCrawl: 1000,
 });
 
-// Qui inserirai le URL da input o file
-const startUrls = [
-    // esempio:
-    // 'https://www.linkedin.com/ad-library/search?accountOwner=stripe'
-];
-
+// Avvia lo scraping con le URL raccolte
 await crawler.run(startUrls);
