@@ -1,0 +1,9 @@
+{
+  "name": "linkedin-ads-scraper",
+  "version": "0.1",
+  "buildTag": "latest",
+  "env": {
+    "APIFY_DEFAULT_KEY_VALUE_STORE_ID": "default"
+  },
+  "baseDockerImage": "apify/actor-node-playwright-chrome"
+}
