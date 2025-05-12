@@ -1,0 +1,13 @@
+{
+  "name": "linkedin-ads-scraper",
+  "version": "1.0.0",
+  "description": "Scraper per LinkedIn Ads Library con Playwright",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "crawlee": "^3.7.0"
+  }
+}
